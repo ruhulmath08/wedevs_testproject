@@ -1,0 +1,14 @@
+include: package:lint/analysis_options.yaml
+
+analyzer:
+  errors:
+    avoid_print: error #If user use print() it display error
+    prefer_single_quotes: error #If user use double_quotes it display error
+
+
+linter:
+  rules:
+    avoid_print: true #restrict print() in project
+    prefer_single_quotes: true #allow only single single_quotes
+
+
