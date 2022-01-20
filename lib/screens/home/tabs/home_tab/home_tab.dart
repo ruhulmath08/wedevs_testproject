@@ -60,23 +60,28 @@ class HomeTab extends StatelessWidget {
                           },
                           child: Card(
                             margin: EdgeInsets.zero,
-                            color: Colors.grey,
+                            elevation: 5,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Column(
                               children: [
-                                ClipRRect(
-                                  borderRadius: const BorderRadius.only(
-                                    bottomLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20),
-                                  ),
-                                  child: image.Image.network(
-                                    productLists[index].images![0].src!,
-                                    height: productDetailsImageHeight,
-                                    width: productDetailsContainerWidth,
-                                    fit: BoxFit.contain,
-                                    //color: Colors.grey,
+                                Container(
+                                  height: 177,
+                                  width: 160.42.w,
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(15),
+                                      topRight: Radius.circular(15),
+                                    ),
+                                    child: image.Image.network(
+                                      productLists[index].images![0].src!,
+                                      height: 122,
+                                      width: 120,
+                                      fit: BoxFit.cover,
+
+                                      //color: Colors.grey,
+                                    ),
                                   ),
                                 ),
                                 Expanded(
@@ -85,7 +90,11 @@ class HomeTab extends StatelessWidget {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text(productLists[index].name!),
+                                        Text(
+                                          productLists[index].name!,
+                                          style: GoogleFonts.lato(fontSize: 16.sp, fontWeight: FontWeight.w400),
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
                                         Row(
                                           children: [
                                             Text('\$ ${productLists[index].regularPrice!}'),
