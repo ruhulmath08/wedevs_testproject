@@ -9,14 +9,15 @@ class HomeTabEvent extends Equatable {
 
 class FetchAllProducts extends HomeTabEvent {}
 
-class FetchFilterOptions extends HomeTabEvent {
+class FetchFilterModels extends HomeTabEvent {}
+
+class FetchFilterOptionsChange extends HomeTabEvent {
   final List<ProductFilterModel> productFilterOptions;
 
-  const FetchFilterOptions({required this.productFilterOptions});
+  const FetchFilterOptionsChange({required this.productFilterOptions});
 
   @override
   List<Object> get props => [productFilterOptions];
 }
-
 
 class FetchApplyButton extends HomeTabEvent {}

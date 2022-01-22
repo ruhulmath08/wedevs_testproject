@@ -21,9 +21,16 @@ String productListText = 'Product List';
 String filterText = 'Filter';
 String sortByText = 'Sort by';
 
+//home_tab
 String newest = 'Newest';
 String oldest = 'Oldest';
 String priceLowHigh = 'Price low > High';
 String priceHighLow = 'Price high > Low';
 String bestSelling = 'Best selling';
-List<String> filterCategoryText = [newest, oldest, priceLowHigh, priceHighLow, bestSelling];
+
+//my_account_tab
+String myAccount = 'My Account';
+String account = 'Account';
+String password = 'Passwords';
+String notification = 'Notification';
+String wishlist = 'wishlist';

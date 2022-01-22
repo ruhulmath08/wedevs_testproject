@@ -4,7 +4,7 @@ import 'package:wedevs_testproject/constants/colores.dart';
 import 'package:wedevs_testproject/screens/home/tabs/cart_tab/cart_tab.dart';
 import 'package:wedevs_testproject/screens/home/tabs/home_tab/home_tab.dart';
 import 'package:wedevs_testproject/screens/home/tabs/list_grid_tab/list_grid_tab.dart';
-import 'package:wedevs_testproject/screens/home/tabs/profile_tab/profile_tab.dart';
+import 'package:wedevs_testproject/screens/home/tabs/my_account_tab/my_account.dart';
 
 class HomeScreen extends StatefulWidget {
   final String title;
@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeTab(),
     ListGridTab(),
     CartTab(),
-    ProfileTab(),
+    MyAccountTab(),
   ];
 
   int selectedIndex = 0;
@@ -49,7 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               MaterialButton(
-                // minWidth: 40,
+                highlightColor: Colors.transparent,
+                splashColor: Colors.transparent,
                 onPressed: () {
                   updateTabSelection(0);
                 },
@@ -60,7 +61,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               MaterialButton(
-                // minWidth: 40,
+                highlightColor: Colors.transparent,
+                splashColor: Colors.transparent,
                 onPressed: () {
                   updateTabSelection(1);
                 },
@@ -72,7 +74,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const Spacer(),
               MaterialButton(
-                // minWidth: 40,
+                highlightColor: Colors.transparent,
+                splashColor: Colors.transparent,
                 onPressed: () {
                   updateTabSelection(2);
                 },
@@ -83,7 +86,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               MaterialButton(
-                // minWidth: 40,
+                highlightColor: Colors.transparent,
+                splashColor: Colors.transparent,
                 onPressed: () {
                   updateTabSelection(3);
                 },

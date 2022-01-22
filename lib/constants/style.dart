@@ -8,8 +8,13 @@ EdgeInsets signInScreenPadding = EdgeInsets.only(left: 33.w, right: 33.w);
 EdgeInsets signUpScreenPadding = EdgeInsets.only(left: 33.w, right: 33.w);
 
 //home_screen home tab
+EdgeInsets homeScreenAllTabPadding = EdgeInsets.symmetric(
+  horizontal: 20.w,
+  vertical: 20.h,
+).copyWith(bottom: 0);
+
 double productDetailsContainerWidth = 160.42.w;
-double productDetailsContainerHeight = 290.25.h;
+double productDetailsContainerHeight = 320.25.h;
 double productDetailsImageHeight = 177.16.h;
 
 double homeBottomSheetHeight = 424.h;

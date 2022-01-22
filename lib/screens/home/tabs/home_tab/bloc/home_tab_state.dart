@@ -7,12 +7,12 @@ class HomeTabState extends Equatable {
     this.fetchJsonDataState = FetchJsonDataState.initialState,
   });
 
-  final List<ProductList> productList;
+  final List<ProductModel> productList;
   final List<ProductFilterModel> productFilterOptions;
   final FetchJsonDataState fetchJsonDataState;
 
   HomeTabState copyWith({
-    List<ProductList>? productList,
+    List<ProductModel>? productList,
     List<ProductFilterModel>? productFilterOptions,
     FetchJsonDataState? fetchJsonDataState,
   }) {

@@ -36,3 +36,10 @@ Color bottomSheetCheckBoxColor = HexColor('#FF708A');
 Color bottomSheetCancelButtonTextColor = HexColor('#818995');
 Color bottomSheetApplyButtonBackgroundColor = HexColor('#1ABC9C');
 Color homeBottomSheetTopLineColor = HexColor('#FFD3DD');
+
+//home_tab
+Color homeTabRegularPriceColor = HexColor('#989FA8');
+
+//my_account tab
+Color profileImageDottedCircleColor = HexColor('#FFADAD');
+Color myAccountEmailColor = HexColor('#535353');

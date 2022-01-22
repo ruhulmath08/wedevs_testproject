@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future navigationPage() async {
-    Navigator.of(context).pushReplacementNamed(signInScreenRoute);
+    if (mounted) Navigator.of(context).pushReplacementNamed(signInScreenRoute);
   }
 
   @override

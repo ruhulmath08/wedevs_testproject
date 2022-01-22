@@ -25,10 +25,6 @@ class LoginHandler {
     _controller.add(AuthenticationStatus.authenticated);
   }
 
-  static Future<void> appUpdateSuccess() async {
-    _controller.add(AuthenticationStatus.authenticated);
-  }
-
   static Future<void> logOut() async {
     WeDevsTestProjectSharePreferences.clear();
     _controller.add(AuthenticationStatus.unauthenticated);

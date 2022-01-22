@@ -4,6 +4,9 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:http/http.dart';
+import 'package:wedevs_testproject/authentication/login_handler.dart';
+import 'package:wedevs_testproject/constants/share_preferences_constant.dart';
+import 'package:wedevs_testproject/local_storage/shared_preferences/wedevs_test_project_sharePreferences.dart';
 import 'package:wedevs_testproject/models/user_model.dart';
 import 'package:wedevs_testproject/networks/api_endpoints.dart';
 import 'package:wedevs_testproject/networks/http_helper.dart';
@@ -62,6 +65,10 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
         final Map<String, dynamic> responseJson = json.decode(response.body) as Map<String, dynamic>;
         final UserModel userModel = UserModel.fromJson(responseJson);
 
+        //now we save the response user JSON data in for future use
+        WeDevsTestProjectSharePreferences.setString(key: spUserModel, value: response.body);
+
+        await LoginHandler.loginSuccess(userModel: userModel);
         yield state.copyWith(status: FormzStatus.submissionSuccess);
       } else {
         yield state.copyWith(status: FormzStatus.submissionFailure);

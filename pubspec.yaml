@@ -35,6 +35,8 @@ dependencies:
   http: ^0.13.4
   flutter_rating_bar: ^4.0.0
   shared_preferences: ^2.0.12
+  #for create dotted circle
+  dotted_border: ^2.0.0+2
 
 dev_dependencies:
   flutter_test:

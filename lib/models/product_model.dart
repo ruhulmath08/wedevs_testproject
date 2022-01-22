@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:core';
 
-ProductList productListFromJson(String str) => ProductList.fromJson(json.decode(str) as Map<String, dynamic>);
+ProductModel productListFromJson(String str) => ProductModel.fromJson(json.decode(str) as Map<String, dynamic>);
 
-String productListToJson(ProductList data) => json.encode(data.toJson());
+String productListToJson(ProductModel data) => json.encode(data.toJson());
 
-class ProductList {
+class ProductModel {
   int? id;
   String? name;
   String? slug;
@@ -76,7 +76,7 @@ class ProductList {
   Store? store;
   Links? links;
 
-  ProductList({
+  ProductModel({
     this.id,
     this.name,
     this.slug,
@@ -148,7 +148,7 @@ class ProductList {
     this.links,
   });
 
-  factory ProductList.fromJson(Map<String, dynamic> json) => ProductList(
+  factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
         id: json['id'] as int,
         name: json['name'] as String,
         slug: json['slug'] as String,

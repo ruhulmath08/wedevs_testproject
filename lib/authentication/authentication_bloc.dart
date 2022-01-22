@@ -1,10 +1,13 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wedevs_testproject/authentication/login_handler.dart';
 import 'package:wedevs_testproject/authentication/token_handler.dart';
 import 'package:wedevs_testproject/constants/enum.dart';
+import 'package:wedevs_testproject/constants/share_preferences_constant.dart';
+import 'package:wedevs_testproject/local_storage/shared_preferences/wedevs_test_project_sharePreferences.dart';
 import 'package:wedevs_testproject/models/user_model.dart';
 
 part 'authentication_event.dart';
@@ -41,8 +44,10 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
       case AuthenticationStatus.unauthenticated:
         return const AuthenticationState.unauthenticated();
       case AuthenticationStatus.authenticated:
-        final user = ;
-        return user != null ? AuthenticationState.authenticated(user) : const AuthenticationState.unauthenticated();
+        final String? jsonData = WeDevsTestProjectSharePreferences.getString(key: spUserModel);
+        final Map<String, dynamic> map = json.decode(jsonData!) as Map<String, dynamic>;
+        final UserModel userModel = UserModel.fromJson(map);
+        return userModel.token != null ? AuthenticationState.authenticated(userModel) : const AuthenticationState.unauthenticated();
       default:
         return const AuthenticationState.unknown();
     }
